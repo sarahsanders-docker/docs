@@ -23,7 +23,7 @@ For example, if you receive your billing on the 8th of every month for 10 seats 
 
 1. Sign in to [Docker Home](https://app.docker.com).
 
-2. Select your **avatar** to expand the drop-down menu.
+2. Select your avatar to expand the drop-down menu.
 
 3. Select **Billing** from the drop-down menu and then **Remove seats**.
 
