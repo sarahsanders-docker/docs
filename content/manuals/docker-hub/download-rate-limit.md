@@ -128,6 +128,7 @@ The following storage and repository limits apply based on your subscription, su
 | Team     | Unlimited           | Unlimited                 | Unlimited                  | Up to 50 GB                |
 | Business | Unlimited           | Unlimited                 | Unlimited                  | Up to 500 GB               |
 
+### How storage is calculated
 
 Private repository storage is calculated on a monthly basis based on the average
 storage used throughout the month per namespace. Docker measures your storage
@@ -139,6 +140,10 @@ storage usage beyond the included amounts in each paid subscription tier will be
 charged at an on-demand rate. You can [scale your
 limit](../subscription/scale.md) or [upgrade](../subscription/change.md) to get
 a higher limit.
+
+We calculate storage based on each unique image layer (or “digest”) stored within a repository. Only unique layers contribute to your storage usage, which means if multiple images in a single repository share the same layer, you’re only billed once for that layer. However, if the same layer is used across different repositories, it will count separately in each one.
+
+**Example:** If 10 different repositories use the same digest, you would be billed for the storage of that digest 10 times (once per repository). However, if you have 10 versions of an image within a single repository that uses the same digest, you would only pay for that digest once.
 
 ## Pull limit and rate limit
 
